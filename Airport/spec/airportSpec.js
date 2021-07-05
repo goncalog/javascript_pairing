@@ -13,7 +13,7 @@ describe('Airport', function() {
     // I want to instruct a plane to land at an airport
     it("can instruct a plane to land", function(){  
       airport.land(plane);
-      expect(airport.planes).toEqual([plane]);
+      expect(airport.planes).toContain(plane);
       expect(plane.isDeparted).toEqual(false);
     });
 
@@ -23,7 +23,7 @@ describe('Airport', function() {
     it('can instruct a plane to take off', function() {
       airport.land(plane);
       airport.takeoff(plane);
-      expect(airport.planes).toEqual([]);
+      expect(airport.planes).not.toContain(plane);
       expect(plane.isDeparted).toBe(true);
     });
 
