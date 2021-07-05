@@ -22,4 +22,12 @@ describe('Thermostat', function() {
         }
         expect(thermostat.temperature).toEqual(10)
     })
+
+    it("maximum temperature is 25 deg if power saving is on", function() {
+      thermostat.turnPowerSavingOn();
+      for (let i = 0; i < 10; i +=1) {
+        thermostat.up()
+      }
+      expect(thermostat.temperature).toEqual(25)
+    });
 } )
