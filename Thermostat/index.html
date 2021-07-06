@@ -5,21 +5,21 @@
     <title>Thermostat</title>
 
     <!-- include source files here... -->
+    <link href='css/app.css' type='text/css' rel='stylesheet'>
     <script src="src/thermostat.js"></script>
-
   </head>
 
   <body>
     <h1>Introducing The Thermostat</h1>
     <br>
-    <h2 id="temperature">20</h2>
+    <h2 id="temperature"></h2>
     <button id="up">+</button>
     <button id="down">-</button>
     <br>
     <br>
     <br>
     <h3>Power saving mode:</h3>
-    <button id="on">on</button>
+    <button class="selected" id="on">on</button>
     <button id="off">off</button>
     <br>
     <br>
@@ -30,6 +30,8 @@
     <br>
     <br>
     <h3>Current energy usage:</h3>
-    <p id="energy-usage">medium-usage</p>
+    <p id="energy-usage"></p>
   </body>
+
+  <script src="src/app.js"></script>
 </html>
