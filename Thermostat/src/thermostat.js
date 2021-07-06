@@ -1,29 +1,55 @@
 class Thermostat {
     constructor() {
-        this.temperature = 20
-        this.powerSavingMode = false
+      this.temperature = 20;
+      this.powerSavingMode = true;
+      this.MIN_TEMP = 10;
+      this.POWER_SAVING_ON_MAX_TEMP = 25;
+      this.POWER_SAVING_OFF_MAX_TEMP = 32;
     }
 
     up() {
-      if (!this.isMaximumTemperature()) {
+      if (!this._isMaxTemperature()) {
         this.temperature += 1;
       }
     }
 
     down() {
-        if (this.temperature > 10) {
-            this.temperature -= 1
-        }
+      if (!this._isMinTemperature()) {
+          this.temperature -= 1;
+      }
     }
 
     turnPowerSavingOn() {
       this.powerSavingMode = true;
     }
 
-    isMaximumTemperature() {
+    turnPowerSavingOff() {
+      this.powerSavingMode = false;
+    }
+
+    reset() {
+      this.temperature = 20;
+    }
+
+    currentEnergyUsage() {
+      if (this.temperature < 18) {
+        return 'low-usage';
+      } else if (this.temperature <= 25) {
+        return 'medium-usage';
+      } else {
+        return 'high-usage';
+      }
+    }
+
+    _isMaxTemperature() {
       if (this.powerSavingMode) {
-        return this.temperature === 25;
-      } 
-      return false
+        return this.temperature === this.POWER_SAVING_ON_MAX_TEMP;
+      } else {
+        return this.temperature === this.POWER_SAVING_OFF_MAX_TEMP;
+      }
+    }
+
+    _isMinTemperature() {
+      return this.temperature === this.MIN_TEMP;
     }
 }
