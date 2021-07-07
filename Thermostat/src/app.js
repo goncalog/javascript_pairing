@@ -49,3 +49,18 @@ resetButton.addEventListener('click', function(e) {
   updateTemperature();
   updateEnergyUsage();
 });
+
+let weatherButton = document.getElementById("weather");
+weatherButton.addEventListener('click', function(e) {
+   
+  let city = document.getElementById("city").value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(response => {
+      let temp = Math.round((response.main.temp - 273.15) * 10) / 10;
+      currentTemperature.innerHTML = `Current temperature in ${city} is ${temp} degrees`;
+    });
+});
+
+let currentTemperature = document.getElementById("current-temperature");
