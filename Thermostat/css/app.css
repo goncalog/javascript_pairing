@@ -1,5 +1,32 @@
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 50px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5%;
+}
+.orange {
+  background: orangered;
+  color: white;
+  font-weight: bold;
+}
+
 .selected {
   font-weight: 900;
-  background-color: blue;
+  background-color: green;
   color: white;
+}
+
+#temperature {
+  font-size: 150px;
+  margin: 0;
+}
+
+#energy-usage {
+  font-weight: 300;
+  font-size: 14px;
 }
