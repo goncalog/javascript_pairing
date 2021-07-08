@@ -70,27 +70,27 @@ describe('Thermostat', function() {
     });
 
     describe('.currentEnergyUsage function', function() {
-      it('returns `low-usage` when temperature is below 18', function() {
+      it('returns `low` when temperature is below 18', function() {
         for (let i = 0; i < 5; i +=1) {
           thermostat.down();
         }
-        expect(thermostat.currentEnergyUsage()).toEqual('low-usage');
+        expect(thermostat.currentEnergyUsage()).toEqual('low');
       });
 
-      it('returns `medium-usage` when temperature is between 18 and 25', function() {
-        expect(thermostat.currentEnergyUsage()).toEqual('medium-usage');
+      it('returns `medium` when temperature is between 18 and 25', function() {
+        expect(thermostat.currentEnergyUsage()).toEqual('medium');
         for (let i = 0; i < 5; i +=1) {
           thermostat.up();
         }
-        expect(thermostat.currentEnergyUsage()).toEqual('medium-usage');
+        expect(thermostat.currentEnergyUsage()).toEqual('medium');
       });
 
-      it('returns `high-usage` when temperature is above 25', function() {
+      it('returns `high` when temperature is above 25', function() {
         thermostat.turnPowerSavingOff();
         for (let i = 0; i < 6; i +=1) {
           thermostat.up();
         }
-        expect(thermostat.currentEnergyUsage()).toEqual('high-usage');
+        expect(thermostat.currentEnergyUsage()).toEqual('high');
       });
     });
 });
