@@ -43,17 +43,15 @@ downButton.addEventListener('click', function(e) {
 let onButton = document.getElementById("on");
 onButton.addEventListener('click', function(e) {
   thermostat.turnPowerSavingOn();
-  onButton.classList.remove('selected');
-  onButton.classList.add('selected');
-  offButton.classList.remove('selected');
+  onButton.className = 'selected';
+  offButton.className = '';
 });
 
 let offButton = document.getElementById("off");
 offButton.addEventListener('click', function(e) {
   thermostat.turnPowerSavingOff();
-  offButton.classList.remove('selected');
-  offButton.classList.add('selected');
-  onButton.classList.remove('selected');
+  offButton.className = 'selected';
+  onButton.className = '';
 });
 
 let resetButton = document.getElementById("reset");
