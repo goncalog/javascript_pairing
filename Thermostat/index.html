@@ -11,35 +11,49 @@
   </head>
 
   <body>
-    <h1 class="center">Introducing The Thermostat</h1>
+    <h1 class="title">Introducing The Thermostat</h1>
     <br>
-    <h2 class="center" id="current-temperature"></h2>
+    <h2 id="current-temperature"></h2>
+    <br>
     <p>Your city is:</p>
     <input id="city">
     <br>
     <br>
-    <button class="orange" id="weather">Get weather</button>
+    <button class="blue" id="weather">Get weather</button>
     <br>
     <br>
     <br>
-    <h2 id="temperature"></h2>
-    <button class="orange" id="up">+</button>
-    <button class="orange" id="down">-</button>
+
+    <div class="temperature-controls">
+      <h2 id="temperature"></h2>
+      <div class="up-and-down">
+        <div class="grid-item up">
+          <button class="orange" id="up">+</button>
+        </div>
+        <div class="grid-item down">
+          <button class="orange" id="down">-</button>
+        </div>
+      </div>
+      <div>
+        <button class="orange" id="reset">Reset</button>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
     <br>
-    <br>
-    <br>
-    <button class="orange" id="reset">Reset</button>
-    <br>
-    <br>
-    <br>
-    <h3>Power saving mode:</h3>
-    <button class="selected" id="on">on</button>
-    <button id="off">off</button>
-    <br>
-    <br>
-    <br>
-    <h3>Current energy usage:</h3>
-    <p id="energy-usage"></p>
+    <div class="energy-section">
+      <div>
+        <h3>Power saving mode:</h3>
+        <button class="selected" id="on">on</button>
+        <button id="off">off</button>
+      </div>
+
+      <div>
+        <h3>Current energy usage:</h3>
+        <p id="energy-usage"></p>
+      </div>
+    </div>
   </body>
 
   <script src="src/app.js"></script>

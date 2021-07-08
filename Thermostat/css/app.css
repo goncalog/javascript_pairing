@@ -9,8 +9,20 @@ button {
   border: none;
   border-radius: 5%;
 }
+
+.title {
+  font-size: 50px;
+  margin: 0;
+}
+
 .orange {
   background: orangered;
+  color: white;
+  font-weight: bold;
+}
+
+.blue {
+  background: blue;
   color: white;
   font-weight: bold;
 }
@@ -19,6 +31,36 @@ button {
   font-weight: 900;
   background-color: green;
   color: white;
+}
+
+.temperature-controls {
+  margin: 0 auto;
+  width: 25%;
+  display: grid;
+  grid-template-columns: 20fr 18fr;
+}
+
+.up-and-down {
+  display: grid;
+  gap: 5px;
+  justify-items: flex-start;
+}
+
+.grid-item.up {
+  display: grid;
+  align-items: flex-end;
+}
+
+.up-and-down button {
+  width: 40px;
+  height: 40px;
+}
+
+.energy-section {
+  margin: 0 auto;
+  width: 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #temperature {
