@@ -4,6 +4,19 @@ function updateTemperature() {
 
 function updateEnergyUsage() {
   currentEnergyUsage.innerHTML = thermostat.currentEnergyUsage();
+  switch (thermostat.currentEnergyUsage()) {
+    case 'low':
+      currentEnergyUsage.className = 'green';
+      break;
+
+    case 'medium':
+      currentEnergyUsage.className = 'yellow';
+      break;
+
+    case 'high':
+      currentEnergyUsage.className = 'red';
+      break;
+  }  
 }
 
 let thermostat = new Thermostat();

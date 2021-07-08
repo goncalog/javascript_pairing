@@ -63,12 +63,25 @@ button {
   grid-template-columns: 1fr 1fr;
 }
 
+.green {
+  color: green;
+}
+
+.yellow {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
 #temperature {
   font-size: 150px;
   margin: 0;
 }
 
 #energy-usage {
+  margin-top: 15px;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 18px;
 }
