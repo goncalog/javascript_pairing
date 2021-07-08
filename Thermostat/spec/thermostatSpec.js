@@ -49,6 +49,15 @@ describe('Thermostat', function() {
         }
         expect(thermostat.temperature).toEqual(25);
       });
+
+      it("automatically changes temperature to 25 degrees if power saving mode is turned on when temperature is above 25 degrees", () => {
+        thermostat.turnPowerSavingOff();
+        for (let i = 0; i < 100; i +=1) {
+          thermostat.up();
+        }
+        thermostat.turnPowerSavingOn();
+        expect(thermostat.temperature).toEqual(25);
+      });
   
       it("maximum temperature is 32 deg if power saving is off", function() {
         thermostat.turnPowerSavingOff();

@@ -45,6 +45,8 @@ onButton.addEventListener('click', function(e) {
   thermostat.turnPowerSavingOn();
   onButton.className = 'selected';
   offButton.className = '';
+  updateTemperature();
+  updateEnergyUsage();
 });
 
 let offButton = document.getElementById("off");

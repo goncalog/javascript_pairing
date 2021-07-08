@@ -21,6 +21,9 @@ class Thermostat {
 
     turnPowerSavingOn() {
       this.powerSavingMode = true;
+      if (this.temperature > this.POWER_SAVING_ON_MAX_TEMP) {
+        this.temperature = this.POWER_SAVING_ON_MAX_TEMP;
+      }
     }
 
     turnPowerSavingOff() {
